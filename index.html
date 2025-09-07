@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>भुक्कड़गंज – Best Cafe in Patna | Filter Coffee, Burgers, Momo</title>
+    <meta name="description" content="भुक्कड़गंज – Patna's best cafe offering delicious filter coffee, tasty burgers, spicy momo, and more. Visit us for an authentic culinary experience.">
+    <meta name="keywords" content="best cafe in Patna, filter coffee in Patna, bhukkadganj Patna, momo in Patna, burgers in Patna, cold coffee Patna">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka&display=swap" rel="stylesheet">
+
+    <!-- Open Graph for Social Sharing -->
+    <meta property="og:title" content="भुक्कड़गंज – Best Cafe in Patna"/>
+    <meta property="og:description" content="Enjoy filter coffee, burgers, momo, and more at भुक्कड़गंज – Patna’s top food spot."/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="https://bhukkadganj.shop"/>
+    <meta property="og:image" content="https://bhukkadganj.shop/path-to-image.jpg"/>
+
+    <!-- Structured Data for Local Business -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CafeOrCoffeeShop",
+      "name": "भुक्कड़गंज",
+      "image": "https://bhukkadganj.shop/path-to-image.jpg",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "2M/88, Bhootnath Rd, Mahatma Gandhi Nagar, Chitragupta Nagar",
+        "addressLocality": "Patna",
+        "addressRegion": "Bihar",
+        "postalCode": "800026",
+        "addressCountry": "IN"
+      },
+      "telephone": "+918252018074",
+      "url": "https://bhukkadganj.shop",
+      "servesCuisine": ["Coffee", "Burgers", "Momo"],
+      "description": "भुक्कड़गंज – Patna’s best cafe offering delicious filter coffee, tasty burgers, and spicy momo."
+    }
+    </script>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Fredoka', sans-serif;
+            background-color: #ebe1c0;
+            color: #333;
+        }
+        header {
+            background-color: #7d2c0b;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 1.8rem;
+        }
+        .menu-section {
+            padding: 20px;
+        }
+        .menu-category {
+            margin-bottom: 30px;
+        }
+        .menu-category h2 {
+            border-bottom: 2px solid #7d2c0b;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        .item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            background-color: white;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        .item-details {
+            flex: 1;
+        }
+        .item-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .item-controls button {
+            background-color: #7d2c0b;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .cart {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #7d2c0b;
+            color: white;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .cart button {
+            background-color: #ebe1c0;
+            color: #7d2c0b;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #7d2c0b;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>भुक्कड़गंज – Best Cafe in Patna</h1>
+</header>
+
+<div class="menu-section" id="menu">
+    
+    <div class="menu-category">
+        <h2>बर्गर – Delicious Burgers in Patna</h2>
+        <div class="item" data-name="The OG Bhुक्कड़" data-price="59">
+            <div class="item-details">The OG Bhुक्कड़ - ₹59</div>
+            <div class="item-controls">
+                <button onclick="updateCart(this, -1)">-</button>
+                <span class="quantity">0</span>
+                <button onclick="updateCart(this, 1)">+</button>
+            </div>
+        </div>
+        <div class="item" data-name="Tandoori Dhamaka" data-price="55">
+            <div class="item-details">Tandoori Dhamaka - ₹55</div>
+            <div class="item-controls">
+                <button onclick="updateCart(this, -1)">-</button>
+                <span class="quantity">0</span>
+                <button onclick="updateCart(this, 1)">+</button>
+            </div>
+        </div>
+        <div class="item" data-name="Tandoori Dhamaka with small fries" data-price="79">
+            <div class="item-details">Tandoori Dhamaka with small fries - ₹79</div>
+            <div class="item-controls">
+                <button onclick="updateCart(this, -1)">-</button>
+                <span class="quantity">0</span>
+                <button onclick="updateCart(this, 1)">+</button>
+            </div>
+        </div>
+        <div class="item" data-name="The OG Bhुक्कड़ with small fries" data-price="75">
+            <div class="item-details">The OG Bhुक्कड़ with small fries - ₹75</div>
+            <div class="item-controls">
+                <button onclick="updateCart(this, -1)">-</button>
+                <span class="quantity">0</span>
+                <button onclick="updateCart(this, 1)">+</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="menu-category">
+        <h2>मोमो – Spicy Momo Delights</h2>
+        <div class="item" data-name="Lahori Momo (5 pcs)" data-price="79">
+            <div class="item-details">Lahori Momo (5 pcs) - ₹79</div>
+            <div class="item-controls">
+                <button onclick="updateCart(this, -1)">-</button>
+                <span class="quantity">0</span>
+                <button onclick="updateCart(this, 1)">+</button>
+            </div>
+        </div>
+        <div class="item" data-name="Veg Paneer Momo" data-price="99">
+            <div class="item-details">Veg Paneer Momo - ₹99</div>
+            <div class="item-controls">
+                <button onclick="updateCart(this, -1)">-</button>
+                <span class="quantity">0</span>
+                <button onclick="updateCart(this, 1)">+</button>
+            </div>
+        </div>
+        <div class="item" data-name="Jhol Momo (5 pcs)" data-price="79">
+            <div class="item-details">Jhol Momo (5 pcs) - ₹79</div>
+            <div class="item-controls">
+                <button onclick="updateCart(this, -1)">-</button>
+                <span class="quantity">0</span>
+                <button onclick="updateCart(this, 1)">+</button>
+            </div>
+        </div>
+        <div class="item" data-name="Fired Momo (5 pcs)" data-price="59">
+            <div class="item-details">Fired Momo (5 pcs) - ₹59</div>
+            <div class="item-controls">
+                <button onclick="updateCart(this, -1)">-</button>
+                <span class="quantity">0</span>
+                <button onclick="updateCart(this, 1)">+</button>
+            </div>
+        </div>
+        <div class="item" data-name="Steam Momo (5 pcs)" data-price="49">
+            <div class="item-details">Steam Momo (5 pcs) - ₹49</div>
+            <div class="item-controls">
+                <button onclick="updateCart(this, -1)">-</button>
+                <span class="quantity">0</span>
+                <button onclick="updateCart(this, 1)">+</button>
+            </div>
+        </div>
+        <div class="item" data-name="Chilli Chatori (5 pcs)" data-price="69">
+            <div class="item-details">Chilli Chatori (5 pcs) - ₹69</div>
+            <div class="item-controls">
+                <button onclick="updateCart(this, -1)">-</button>
+                <span class="quantity">0</span>
+                <button onclick="updateCart(this, 1)">+</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="menu-category">
+        <h2>कॉफी – Best Filter Coffee in Patna</h2>
+        <div class="item" data-name="Filter Coffee" data-price="25">
+            <div class="item-details">Filter Coffee - ₹25</div>
+            <div class="item-controls">
+                <button onclick="updateCart(this, -1)">-</button>
+                <span class="quantity">0</span>
+                <button onclick="updateCart(this, 1)">+</button>
+            </div>
+        </div>
+        <div class="item" data-name="Bhukkad Cold Coffee" data-price="59">
+            <div class="item-details">Bhukkad Cold Coffee - ₹59</div>
+            <div class="item-controls">
+                <button onclick="updateCart(this, -1)">-</button>
+                <span class="quantity">0</span>
+                <button onclick="updateCart(this, 1)">+</button>
+            </div>
+        </div>
+        <div class="item" data-name="Espresso" data-price="49">
+            <div class="item-details">Espresso - ₹49</div>
+            <div class="item-controls">
+                <button onclick="updateCart(this, -1)">-</button>
+                <span class="quantity">0</span>
+                <button onclick="updateCart(this, 1)">+</button>
+            </div>
+        </div>
+        <div class="item" data-name="Orange Coffee" data-price="59">
+            <div class="item-details">Orange Coffee - ₹59</div>
+            <div class="item-controls">
+                <button onclick="updateCart(this, -1)">-</button>
+                <span class="quantity">0</span>
+                <button onclick="updateCart(this, 1)">+</button>
+            </div>
+        </div>
+        <div class="item" data-name="Dalgona Coffee" data-price="59">
+            <div class="item-details">Dalgona Coffee - ₹59</div>
+            <div class="item-controls">
+                <button onclick="updateCart(this, -1)">-</button>
+                <span class="quantity">0</span>
+                <button onclick="updateCart(this, 1)">+</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="cart">
+    <div class="cart-info">
+        कुल: ₹<span id="total">0</span>
+    </div>
+    <button onclick="orderNow()">ऑर्डर करें</button>
+</div>
+
+<footer>
+    <p>📍 पता: 2M/88, Bhootnath Rd, Mahatma Gandhi Nagar, Chitragupta Nagar, Patna, Bihar 800026</p>
+    <p>📞 WhatsApp: +91 82520 18074</p>
+    <p>फॉलो करें हमारे सोशल मीडिया पर लेटेस्ट ऑफर्स के लिए!</p>
+</footer>
+
+<script>
+    const cart = {};
+
+    function updateCart(button, delta) {
+        const itemDiv = button.closest('.item');
+        const name = itemDiv.dataset.name;
+        const price = parseInt(itemDiv.dataset.price);
+        const quantityElem = itemDiv.querySelector('.quantity');
+        let quantity = parseInt(quantityElem.textContent);
+
+        quantity = Math.max(0, quantity + delta);
+        quantityElem.textContent = quantity;
+
+        if (quantity > 0) {
+            cart[name] = { price, quantity };
+        } else {
+            delete cart[name];
+        }
+
+        updateTotal();
+    }
+
+    function updateTotal() {
+        let total = 0;
+        for (let name in cart) {
+            total += cart[name].price * cart[name].quantity;
+        }
+        document.getElementById('total').textContent = total;
+    }
+
+    function orderNow() {
+        let message = "नमस्ते भुक्कड़गंज! मुझे ये ऑर्डर चाहिए:\n";
+        let total = 0;
+        for (let name in cart) {
+            const { price, quantity } = cart[name];
+            message += `${quantity}x ${name} - ₹${price * quantity}\n`;
+            total += price * quantity;
+        }
+        message += `कुल: ₹${total}\nकृपया ऑर्डर की पुष्टि करें।`;
+
+        const encodedMessage = encodeURIComponent(message);
+        const whatsappNumber = "918252018074";
+        window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, '_blank');
+    }
+</script>
+
+</body>
+</html>
